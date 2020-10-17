@@ -51,6 +51,7 @@ public class Part23Activity extends AppCompatActivity {
      */
 
 
+
     private ContactsAdapter contactsAdapter;
     private ArrayList<Contact> contactArrayList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -114,29 +115,6 @@ public class Part23Activity extends AppCompatActivity {
 
                             }
                         }));*/
-
-    }
-
-    private void getAllContactsDataObservable() {
-/** NOTE:
- * when we are using consumers, to handle exceptions we need to add another consumer taking the type as Throwable */
-        compositeDisposable.add(
-                contactsAppDatabase.getContactDAO().getContactsObservable()
-                        .subscribeOn(Schedulers.computation())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Consumer<List<Contact>>() {
-                            @Override
-                            public void accept(List<Contact> contacts) {
-                                contactArrayList.clear();
-                                contactArrayList.addAll(contacts);
-                                contactsAdapter.notifyDataSetChanged();
-                            }
-                        }, new Consumer<Throwable>() {
-                            @Override
-                            public void accept(Throwable throwable) {
-
-                            }
-                        }));
 
     }
 
@@ -216,7 +194,6 @@ public class Part23Activity extends AppCompatActivity {
         //contactsAdapter.notifyDataSetChanged();
 
 
-
         compositeDisposable.add(
                 Completable.fromAction(new Action() {
                     @SuppressLint("CheckResult")
@@ -231,7 +208,7 @@ public class Part23Activity extends AppCompatActivity {
                             /**Why DisposableCompletableObserver? because we use CompositDisposable*/
                             @Override
                             public void onComplete() {
-                                Toast.makeText(Part23Activity.this, "Contact Deleted Successfully" , Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Part23Activity.this, "Contact Deleted Successfully", Toast.LENGTH_SHORT).show();
                                 contactArrayList.remove(position);//IT SHOULD NOT USE HERE !!!
                                 contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
                             }
@@ -241,8 +218,6 @@ public class Part23Activity extends AppCompatActivity {
 
                             }
                         }));
-
-
 
 
     }
@@ -259,7 +234,6 @@ public class Part23Activity extends AppCompatActivity {
         //contactsAdapter.notifyDataSetChanged();
 
 
-
         compositeDisposable.add(
                 Completable.fromAction(new Action() {
                     @SuppressLint("CheckResult")
@@ -274,7 +248,7 @@ public class Part23Activity extends AppCompatActivity {
                             /**Why DisposableCompletableObserver? because we use CompositDisposable*/
                             @Override
                             public void onComplete() {
-                                Toast.makeText(Part23Activity.this, "Contact Updated Successfully" , Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Part23Activity.this, "Contact Updated Successfully", Toast.LENGTH_SHORT).show();
                                 contactArrayList.set(position, contact);//IT SHOULD NOT USE HERE !!!
                                 contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
                             }
