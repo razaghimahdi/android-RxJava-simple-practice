@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rxjavaudemy01">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Part04Activity"></activity>
+        <activity android:name=".view.Part23Activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".view.part22.Part22MovieActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.part22.Part22Activity" />
+        </activity>
+        <activity android:name=".view.part22.Part22Activity" />
+        <activity
+            android:name=".view.part21.AddToDoActivity"
+            android:parentActivityName=".view.part21.Part21Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.part21.Part21Activity" />
+        </activity>
+        <activity
+            android:name=".view.part21.Part21Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.Part20Activity" />
+        <activity android:name=".view.Part19Activity" />
+        <activity android:name=".view.Part18Activity" />
+        <activity android:name=".view.Part17Activity" />
+        <activity android:name=".view.Part16Activity" />
+        <activity android:name=".view.Part15Activity" />
+        <activity android:name=".view.Part14Activity" />
+        <activity android:name=".view.Part13Activity" />
+        <activity android:name=".view.Part12Activity" />
+        <activity android:name=".view.Part11Activity" />
+        <activity android:name=".view.Part10Activity" />
+        <activity android:name=".view.Part09Activity" />
+        <activity android:name=".view.Part08Activity" />
+        <activity android:name=".view.Part07Activity" />
+        <activity android:name=".view.Part06Activity" />
+        <activity android:name=".view.Part05Activity" />
+        <activity android:name=".view.Part04Activity" />
         <activity android:name=".view.Part03Activity" />
         <activity android:name=".view.Part02Activity" />
         <activity android:name=".view.Part01Activity" />

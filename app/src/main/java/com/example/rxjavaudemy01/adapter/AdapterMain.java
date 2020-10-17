@@ -19,6 +19,25 @@ import com.example.rxjavaudemy01.view.Part01Activity;
 import com.example.rxjavaudemy01.view.Part02Activity;
 import com.example.rxjavaudemy01.view.Part03Activity;
 import com.example.rxjavaudemy01.view.Part04Activity;
+import com.example.rxjavaudemy01.view.Part05Activity;
+import com.example.rxjavaudemy01.view.Part06Activity;
+import com.example.rxjavaudemy01.view.Part07Activity;
+import com.example.rxjavaudemy01.view.Part08Activity;
+import com.example.rxjavaudemy01.view.Part09Activity;
+import com.example.rxjavaudemy01.view.Part10Activity;
+import com.example.rxjavaudemy01.view.Part11Activity;
+import com.example.rxjavaudemy01.view.Part12Activity;
+import com.example.rxjavaudemy01.view.Part13Activity;
+import com.example.rxjavaudemy01.view.Part14Activity;
+import com.example.rxjavaudemy01.view.Part15Activity;
+import com.example.rxjavaudemy01.view.Part16Activity;
+import com.example.rxjavaudemy01.view.Part17Activity;
+import com.example.rxjavaudemy01.view.Part18Activity;
+import com.example.rxjavaudemy01.view.Part19Activity;
+import com.example.rxjavaudemy01.view.Part20Activity;
+import com.example.rxjavaudemy01.view.Part23Activity;
+import com.example.rxjavaudemy01.view.part22.Part22Activity;
+import com.example.rxjavaudemy01.view.part21.Part21Activity;
 
 import java.util.Collections;
 import java.util.List;
@@ -88,6 +107,83 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                     }
                     if (getPosition() == 3){
                         Intent intent = new Intent(context, Part04Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 4){
+                        Intent intent = new Intent(context, Part05Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 5){
+                        Intent intent = new Intent(context, Part06Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 6){
+                        Intent intent = new Intent(context, Part07Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 7){
+                        Intent intent = new Intent(context, Part08Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 8){
+                        Intent intent = new Intent(context, Part09Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 9){
+                        Intent intent = new Intent(context, Part10Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 10){
+                        Intent intent = new Intent(context, Part11Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 11){
+                        Intent intent = new Intent(context, Part12Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 12){
+                        Intent intent = new Intent(context, Part13Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 13){
+                        Intent intent = new Intent(context, Part14Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 14){
+                        Intent intent = new Intent(context, Part15Activity.class);
+                        context.startActivity(intent);
+                    }
+
+                    if (getPosition() == 15){
+                        Intent intent = new Intent(context, Part16Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 16){
+                        Intent intent = new Intent(context, Part17Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 17){
+                        Intent intent = new Intent(context, Part18Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 18){
+                        Intent intent = new Intent(context, Part19Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 19){
+                        Intent intent = new Intent(context, Part20Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 20){
+                        Intent intent = new Intent(context, Part21Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 21){
+                        Intent intent = new Intent(context, Part22Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 22){
+                        Intent intent = new Intent(context, Part23Activity.class);
                         context.startActivity(intent);
                     }
 

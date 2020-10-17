@@ -22,7 +22,7 @@ public class Part03Activity extends AppCompatActivity {
     private Observable<String> myObservable;
     private DisposableObserver<String> myObserver;
     private DisposableObserver<String> myObserver2;
-    private String TAG = "TAG";
+    private String TAG = "MyTAG Part03Activity";
     private TextView txtGreeting;
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();

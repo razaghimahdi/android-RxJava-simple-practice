@@ -21,7 +21,7 @@ public class Part02Activity extends AppCompatActivity {
     private String greeting="Hello From RXJava";
     private Observable<String> myObservable;
     private DisposableObserver<String> myObserver;
-    private String TAG="TAG";
+    private String TAG="MyTAG Part02Activity";
     private TextView txtGreeting;
 
 

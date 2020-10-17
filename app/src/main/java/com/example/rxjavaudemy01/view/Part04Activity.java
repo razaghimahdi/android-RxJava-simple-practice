@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.rxjavaudemy01.R;
 
+import java.util.Arrays;
+
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
@@ -20,7 +22,7 @@ public class Part04Activity extends AppCompatActivity {
     private String[] greetings = {"Hello A","Hello B"};
     private Observable<String[]> myObservable;
     private DisposableObserver<String[]> myObserver;
-     private String TAG = "TAG";
+     private String TAG = "MyTAG Part04Activity";
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -47,7 +49,7 @@ public class Part04Activity extends AppCompatActivity {
         myObserver = new DisposableObserver<String[]>() {
             @Override
             public void onNext(@NonNull String[] s) {
-                Log.i(TAG, "onNext: " + s);
+                Log.i(TAG, "onNext: " + Arrays.toString(s));
             }
 
             @Override
@@ -63,5 +65,11 @@ public class Part04Activity extends AppCompatActivity {
         return myObserver;
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        compositeDisposable.clear();
+    }
 
 }

@@ -43,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
     private List<infoMain> getdata() {
         List<infoMain> data = new ArrayList<>();
         String title[] = {"Part01: Starter(just, Disposable,Observable,Observer)",
-        "Part02: DisposableObserver","Part03:CompositeDisposable","Part04:(just,String[])"};
+        "Part02: DisposableObserver","Part03:CompositeDisposable","Part04:(just,String[])"
+        ,"Part05:FromArray","Part06:Range","Part07:Create","Part08:Map","Part09:FlatMap",
+        "Part10:ConcatMap","Part11:Buffer","Part12:Filter","Part13:Distinct","Part14:Skip","Part15:SkipLast",
+        "Part16:AsyncSubject","Part17:behaviorSubject","Part18:publishSubjectClass","Part19:replaySubjectClass",
+        "Part20:RxBinding","Part21:Study-Project","Part22:Retrofit","Part23:Room"};
 
 
         for (int i = 0; i < title.length ; i++) {
