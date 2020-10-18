@@ -33,15 +33,15 @@ public class Part01Activity extends AppCompatActivity {
         txtGreeting=findViewById(R.id.txtGreeting);
 
 
-        myObservable=Observable.just(greeting)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+        myObservable=Observable.just(greeting)/**NOTE: this is not suitable for large list, like a list from server...*/
+                .subscribeOn(Schedulers.io())/** NOTE: this means, from this point onwards data stream will execute on the io thread.*/
+                .observeOn(AndroidSchedulers.mainThread());/** NOTE: this means, this data stream will move to main thread again.*/
        // myObservable.subscribeOn(Schedulers.io());
         //myObservable.observeOn(AndroidSchedulers.mainThread());
 
         myObserver=new Observer<String>() {
             @Override
-            public void onSubscribe(@NonNull Disposable d) {
+            public void onSubscribe(@NonNull Disposable d) {/** NOTE: This onSubscribe method will be triggered when this observer subscribed to the observable.*/
                 Log.i(TAG, "onSubscribe: "+d);
                 disposable=d;
             }
@@ -63,7 +63,7 @@ public class Part01Activity extends AppCompatActivity {
             }
         };
 
-        myObservable.subscribe(myObserver);
+        myObservable.subscribe(myObserver);/**NOTE: this subscribe method of observable returns a disposable*/
 
 
     }

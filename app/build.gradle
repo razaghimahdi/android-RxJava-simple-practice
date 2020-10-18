@@ -35,6 +35,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.0'
 
+    implementation 'com.github.razaghimahdi:Android-Loading-Dots:1.0.0'
+
 /*
     implementation "android.arch.persistence.room:runtime:1.1.1"
     implementation "android.arch.persistence.room:rxjava2:1.1.1"

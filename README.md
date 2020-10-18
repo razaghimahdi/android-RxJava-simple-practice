@@ -37,7 +37,18 @@ We can use them to control data streams belong to observables in any specific wa
 # Disposable&CompositeDisposable
 we use them to avoid memory leaks.one set Observable and Observer connection is called a subscription.
 
+# What are the schedulers in RxJava?
+with help of Schedulers we handle multithreading in RxJava.
+A schedulers can be identified as a thread pool managing one more threads.
 
+# we have different types of schedulers:
+Schedulers.io(): This can have a limitless thread pool.Used for non CPU intensive tasks.Such as database interaction, network communications and file system interactions.
+AndroidSchedulers.mainThread(): This is where usr interaction happen. This is the main thread/UI thread.This scheduler does not come with RxJava, Provided to RxJava from RxAndroid.
+*In Android development 90% of the time we use these 2 schedulers:Schedulers.io(), AndroidSchedulers.mainThread()*
+Schedulers.newThread(): This schedulers creates a new thread for each unit of work scheduled.
+Schedulers.single(): This schedulers has a single thread executing tasks one after another following the given order.
+Schedulers.trampoline(): this scheduler executes tasks following first in first out basics, We use this when implementing recurring tasks.
+Schedulers.from(Executor executor): This creates and returns a custom scheduler backed by a specific executer.
 
 
 <img src="screenshots/Screenshot_1602918713.png" width="300">
