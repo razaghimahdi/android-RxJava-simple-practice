@@ -25,7 +25,9 @@ public class Part03Activity extends AppCompatActivity {
     private String TAG = "MyTAG Part03Activity";
     private TextView txtGreeting;
 
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();/**NOTE: in one class you can have more than one observables (each observable can have many observers),
+     so in case like that you will have many observers to dispose.
+     When we have more than one observers we use CompositeDisposable.*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -32,7 +32,10 @@ public class Part04Activity extends AppCompatActivity {
         setContentView(R.layout.activity_part04);
 
 
-        myObservable = Observable.just(greetings);
+        myObservable = Observable.just(greetings);/**NOTE: The Just operator converts an item into an observable that emits that item,
+         it means Just operator only emits the object once,
+         it does not iterate through each item of the array.
+         So Just operator does not work well for an array */
 
         compositeDisposable.add(
                 myObservable.subscribeOn(Schedulers.io())

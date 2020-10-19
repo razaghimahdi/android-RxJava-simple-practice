@@ -20,7 +20,9 @@ public class Part02Activity extends AppCompatActivity {
 
     private String greeting="Hello From RXJava";
     private Observable<String> myObservable;
-    private DisposableObserver<String> myObserver;
+    private DisposableObserver<String> myObserver;/**NOTE: DisposableObserver is a much efficient way,
+     it reduces the number of code line and it makes our works easier,
+     especially if you have more than one observers in a class.*/
     private String TAG="MyTAG Part02Activity";
     private TextView txtGreeting;
 
@@ -36,11 +38,9 @@ public class Part02Activity extends AppCompatActivity {
         myObservable=Observable.just(greeting)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
-        // myObservable.subscribeOn(Schedulers.io());
-        //myObservable.observeOn(AndroidSchedulers.mainThread());
 
 
-        myObserver=new DisposableObserver<String>() {
+        myObserver=new DisposableObserver<String>() {/**NOTE: we don't have a onSubscribe method with a observable instance.why is that? Actually we don't need it anymore.because now we can directly call DisposableObserver's dispose*/
             @Override
             public void onNext(@NonNull String s) {
                 Log.i(TAG, "onNext: "+s);
@@ -65,7 +65,7 @@ public class Part02Activity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onDestroy() {/**NOTE: now in this onDestroy method we can directly call DisposableObserver's dispose method.*/
         super.onDestroy();
         myObserver.dispose();
     }

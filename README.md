@@ -34,7 +34,10 @@ Operators allow you to convert the stream before its received by the observers a
 there are over 70 different operators available.
 We can use them to control data streams belong to observables in any specific way we want.
 
-# Disposable&CompositeDisposable
+# Disposable, CompositeDisposable & DisposableObserver
+DisposableObserver: DisposableObserver is a much efficient way, it reduces the number of code line and it makes our works easier,especially if you have more than one observers in a class.
+CompositeDisposable: in one class you can have more than one observables (each observable can have many observers), so in case like that you will have many observers to dispose.When we have more than one observers we use CompositeDisposable.
+
 we use them to avoid memory leaks.one set Observable and Observer connection is called a subscription.
 
 # What are the schedulers in RxJava?

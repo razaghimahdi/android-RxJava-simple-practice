@@ -33,7 +33,10 @@ public class Part05Activity extends AppCompatActivity {
         setContentView(R.layout.activity_part05);
 
 
-        myObservable = Observable.fromArray(greetings);
+        myObservable = Observable.fromArray(greetings);/**NOTE: FromArray operator creates an Observable from a set of items of the array using an Iterable,
+         which means in this case each string will be emitted one at a time.
+         If you set debug point on some lines you can see, now the fromArray method emits each String from the array list one after another.
+         You can use FromArray to any type of data.*/
 
         compositeDisposable.add(
                 myObservable.subscribeOn(Schedulers.io())
