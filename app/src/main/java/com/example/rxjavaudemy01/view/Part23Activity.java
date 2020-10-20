@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ import com.example.rxjavaudemy01.adapter.part23.ContactsAdapter;
 import com.example.rxjavaudemy01.db.part21.ToDoListItem;
 import com.example.rxjavaudemy01.db.part23.ContactsAppDatabase;
 import com.example.rxjavaudemy01.db.part23.entity.Contact;
+import com.example.rxjavaudemy01.model.part07.Part07Student;
 import com.example.rxjavaudemy01.model.part22.Movie;
 import com.example.rxjavaudemy01.model.part22.MovieDBResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,14 +33,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.observers.DisposableCompletableObserver;
+import io.reactivex.rxjava3.observers.DisposableObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
-
 
 public class Part23Activity extends AppCompatActivity {
 
@@ -70,9 +77,9 @@ public class Part23Activity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view_contacts);
         contactsAppDatabase = Room.databaseBuilder(getApplicationContext(), ContactsAppDatabase.class, "ContactDB")
-                .allowMainThreadQueries().build();//allowMainThreadQueries() SHOULD NOT BE HERE
+                .build();//allowMainThreadQueries() SHOULD NOT BE HERE
 
-        contactArrayList.addAll(contactsAppDatabase.getContactDAO().getContacts());
+        //contactArrayList.addAll(contactsAppDatabase.getContactDAO().getContacts());
 
         contactsAdapter = new ContactsAdapter(this, contactArrayList, Part23Activity.this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -80,7 +87,7 @@ public class Part23Activity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(contactsAdapter);
 
-        //getAllContactsData();
+        getAllContactsData();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -97,9 +104,9 @@ public class Part23Activity extends AppCompatActivity {
     private void getAllContactsData() {
 /** NOTE:
  * when we are using consumers, to handle exceptions we need to add another consumer taking the type as Throwable */
-/*
+
         compositeDisposable.add(
-                contactsAppDatabase.getContactDAO().getContacts()
+                contactsAppDatabase.getContactDAO().getContactsObservable()
                         .subscribeOn(Schedulers.computation())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Consumer<List<Contact>>() {
@@ -114,10 +121,9 @@ public class Part23Activity extends AppCompatActivity {
                             public void accept(Throwable throwable) {
 
                             }
-                        }));*/
+                        }));
 
     }
-
 
     public void addAndEditContacts(final boolean isUpdate, final Contact contact, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
@@ -209,8 +215,8 @@ public class Part23Activity extends AppCompatActivity {
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Deleted Successfully", Toast.LENGTH_SHORT).show();
-                                contactArrayList.remove(position);//IT SHOULD NOT USE HERE !!!
-                                contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
+                                //contactArrayList.remove(position);//IT SHOULD NOT USE HERE !!!
+                                //contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
                             }
 
                             @Override
@@ -249,8 +255,8 @@ public class Part23Activity extends AppCompatActivity {
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Updated Successfully", Toast.LENGTH_SHORT).show();
-                                contactArrayList.set(position, contact);//IT SHOULD NOT USE HERE !!!
-                                contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
+                                //contactArrayList.set(position, contact);//IT SHOULD NOT USE HERE !!!
+                                //contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
                             }
 
                             @Override
@@ -278,9 +284,9 @@ public class Part23Activity extends AppCompatActivity {
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Added Successfully" + rowIdOfTheItemInserted, Toast.LENGTH_SHORT).show();
-                                Contact contact = contactsAppDatabase.getContactDAO().getContact(rowIdOfTheItemInserted);//IT SHOULD NOT USE HERE !!!
-                                contactArrayList.add(0, contact);//IT SHOULD NOT USE HERE !!!
-                                contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
+                                //Contact contact = contactsAppDatabase.getContactDAO().getContact(rowIdOfTheItemInserted);//IT SHOULD NOT USE HERE !!!
+                                //contactArrayList.add(0, contact);//IT SHOULD NOT USE HERE !!!
+                                //contactsAdapter.notifyDataSetChanged();//IT SHOULD NOT USE HERE !!!
                             }
 
                             @Override

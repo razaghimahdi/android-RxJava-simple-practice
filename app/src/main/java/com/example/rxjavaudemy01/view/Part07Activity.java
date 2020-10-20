@@ -34,6 +34,9 @@ public class Part07Activity extends AppCompatActivity {
         setContentView(R.layout.activity_part07);
 
         myObservable=Observable.create(new ObservableOnSubscribe<Part07Student>() {
+            /**NOTE: create an Observable from scratch by means of a function,
+         With create method we can have a function body.
+         so we can have some control over our data before the emition.*/
             @Override
             public void subscribe(@NonNull ObservableEmitter<Part07Student> emitter) throws Throwable {
                 ArrayList<Part07Student> studentArrayList=getStudents();

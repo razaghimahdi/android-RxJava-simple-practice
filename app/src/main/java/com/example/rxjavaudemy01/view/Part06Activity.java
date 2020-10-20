@@ -16,9 +16,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Part06Activity extends AppCompatActivity {
 
-    //private String[] greetings = {"Hello A","Hello B"};
-    //private Observable<String> myObservable;
-    //private DisposableObserver<String> myObserver;
     private Observable<Integer> myObservable;
     private DisposableObserver<Integer> myObserver;
      private String TAG = "MyTAG Part06Activity";
@@ -32,7 +29,7 @@ public class Part06Activity extends AppCompatActivity {
         setContentView(R.layout.activity_part06);
 
 
-        myObservable = Observable.range(1,20);
+        myObservable = Observable.range(1,20);/**The Range operator emits a range of sequential integers*/
 
         compositeDisposable.add(
                 myObservable.subscribeOn(Schedulers.io())

@@ -11,6 +11,8 @@ import com.example.rxjavaudemy01.db.part23.entity.Contact;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Observable;
 
 
 @Dao
@@ -38,6 +40,8 @@ public interface ContactDAO {
     @Query("select * from contacts")
     Observable<List<Contact>> getContactsObservable();*/
 
+    @Query("select * from contacts")
+    Flowable<List<Contact>> getContactsObservable();
 
     @Query("select * from contacts where contact_id ==:contactId")
     public Contact getContact(long contactId);
