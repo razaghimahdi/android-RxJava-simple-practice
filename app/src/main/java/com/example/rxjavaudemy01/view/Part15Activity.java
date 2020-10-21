@@ -30,7 +30,7 @@ public class Part15Activity extends AppCompatActivity {
         numberObservable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .skip(6)
+                .skipLast(6)/**NOTE: suppress the final n items emitted by an Observable*/
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

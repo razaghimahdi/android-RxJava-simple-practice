@@ -56,7 +56,8 @@ public class Part08Activity extends AppCompatActivity {
                 myObservable
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .map(new Function<Part07Student, Part07Student>() {
+                        .map(new Function<Part07Student, Part07Student>() {/**NOTE: transform the items emitted by an Observable by applying a function to each item.
+                         new Function has two parameters is the input, first parameter is the input, second parameter is the output type.*/
                             @Override
                             public Part07Student apply(Part07Student student) throws Throwable {
                                 student.setName(student.getName().toUpperCase());

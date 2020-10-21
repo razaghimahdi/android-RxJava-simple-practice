@@ -29,7 +29,8 @@ public class Part11Activity extends AppCompatActivity {
         
         myObservable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .buffer(4)
+                .buffer(4)/**NOTE: periodically gather items emitted by an Observable into bundles and emit these bundles rather than emitting the items one at a time.
+                    i added 4, because we are going to emit them as group of 4 integers.*/
                 .subscribe(new Observer<List<Integer>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

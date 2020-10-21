@@ -15,7 +15,7 @@ public class RetrofitInstance {
     public static MoviesDataService getService() {
 
 
-        OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
+        OkHttpClient okHttpClient = new OkHttpClient().newBuilder()/**NOTE: retrofit will always use the default timeout.*/
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .readTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)

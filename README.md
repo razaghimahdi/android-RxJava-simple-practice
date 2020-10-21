@@ -54,6 +54,17 @@ Schedulers.trampoline(): this scheduler executes tasks following first in first 
 Schedulers.from(Executor executor): This creates and returns a custom scheduler backed by a specific executer.
 
 
+# Should we use RxJava with Retrofit ?
+if you are working with a large amount of data which also need some modifications, or if you have to communicate with multiple REST APIs simultaneously RxJava is the best say to do it.
+
+# What are the benifits of using RxJava with Retrofit?
+To get the advantage of operators
+To avoid multithreading problems
+To avoid memory leaks
+Easier error handling
+To write cleaner code
+
+
 <img src="screenshots/Screenshot_1602918713.png" width="300">
 <img src="screenshots/Screenshot_1602918725.png" width="300">
 <img src="screenshots/Screenshot_1602918737.png" width="300">

@@ -29,7 +29,8 @@ public class Part12Activity extends AppCompatActivity {
 
         myObservable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-        .filter(new Predicate<Integer>() {
+        .filter(new Predicate<Integer>() {/**NOTE: emit only those items from an Observable that pass a predicate test.
+         filter operator filters an observables making sure that emitted items match specified condition.*/
             @Override
             public boolean test(Integer integer) throws Throwable {
                 return integer%3==0;

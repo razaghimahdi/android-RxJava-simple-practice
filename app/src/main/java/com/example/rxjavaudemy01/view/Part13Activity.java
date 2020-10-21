@@ -29,7 +29,7 @@ public class Part13Activity extends AppCompatActivity {
         numberObservable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .distinct()
+                .distinct()/**NOTE: suppress duplicate items emitted by an Observable*/
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

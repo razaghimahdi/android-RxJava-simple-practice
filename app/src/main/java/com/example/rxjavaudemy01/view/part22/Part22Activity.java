@@ -156,7 +156,7 @@ public class Part22Activity extends AppCompatActivity {
                         .flatMap(new Function<MovieDBResponse, ObservableSource<Movie>>() {
                             @Override
                             public ObservableSource<Movie> apply(MovieDBResponse movieDBResponse) throws Throwable {
-                                return Observable.fromArray(movieDBResponse.getMovies().toArray(new Movie[0]));
+                                return Observable.fromArray(movieDBResponse.getMovies().toArray(new Movie[0]));/**NOTE: we don't know the size of the array Therefor we added 0 so java will generate an array containing all movie instances. */
                             }
                         })
                         .subscribeWith(new DisposableObserver<Movie>() {

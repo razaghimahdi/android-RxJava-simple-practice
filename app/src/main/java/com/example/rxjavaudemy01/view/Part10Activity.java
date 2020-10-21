@@ -21,6 +21,12 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Part10Activity extends AppCompatActivity {
 
+    /**NOTE:
+     * if Order is important use ConcatMap
+     * if Speed is important use FlatMap*/
+
+
+
     private final static String TAG = "MyTAG Part10Activity";
     private Observable<Part07Student> myObservable;
     private DisposableObserver<Part07Student> myObserver;
@@ -56,7 +62,10 @@ public class Part10Activity extends AppCompatActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
 
-                        .concatMap(new Function<Part07Student, Observable<Part07Student>>() {
+                        .concatMap(new Function<Part07Student, Observable<Part07Student>>() {/**NOTE: emit the emissions from two or more Observable without interleaving them.
+                         if there is a large amount of data to emit, data streams may overlap.but if you use concatMap it does not happen.
+                         concatMap operator cares about the order of the elements.
+                         but concatMap has one big weakness,it waits for each observable to finish all the work until next one is processed.*/
                             @Override
                             public Observable<Part07Student> apply(Part07Student student) throws Throwable {
 

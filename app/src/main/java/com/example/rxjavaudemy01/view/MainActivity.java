@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         List<infoMain> data = new ArrayList<>();
         String title[] = {"Part01: Starter(just Operator, Disposable,Observable,Observer)",
         "Part02: DisposableObserver","Part03:CompositeDisposable","Part04:(just Operator,String[])"
-        ,"Part05:FromArray","Part06:Range","Part07:Create","Part08:Map","Part09:FlatMap",
-        "Part10:ConcatMap","Part11:Buffer","Part12:Filter","Part13:Distinct","Part14:Skip","Part15:SkipLast",
+        ,"Part05:FromArray Operator","Part06:Range Operator","Part07:Create Operator","Part08:Map Operator","Part09:FlatMap Operator",
+        "Part10:ConcatMap Operator","Part11:Buffer Operator","Part12:Filter Operator","Part13:Distinct Operator","Part14:Skip Operator","Part15:SkipLast Operator",
         "Part16:AsyncSubject","Part17:behaviorSubject","Part18:publishSubjectClass","Part19:replaySubjectClass",
         "Part20:RxBinding","Part21:Study-Project","Part22:Retrofit","Part23:Room"};
 
