@@ -65,6 +65,20 @@ Easier error handling
 To write cleaner code
 
 
+
+# Subject
+A Subject is a sort of bridge or proxy that is available in some implementations of ReactiveX that acts both as an observer and as an Observable.
+Because it is an observer, it can subscribe to one or more Observables, and because it is an Observable, it can pass through the items it observes by reemitting them, and it can also emit new items.
+Subject class extending the Observable class and implementing the Observer interface. That's why it can act like both.
+# when do we use subjects?
+Subjects have a lots of "real world" applications. When you transform your code base from imperative to reactive style. It can serve as a bridge between those two coding style.
+# Subject type
+Async Subject:it emits only the last value of the Observable.
+Behavior Subject:it emits most recently emitted item and all the subsequent items of the source Observable.
+Publish Subject:it emits all the subsequent items of the source Observable at the time of subscription.
+Reply Subject:it emits all the items if the source Observable, regardless of when the subscriber subscribes.
+
+
 <img src="screenshots/Screenshot_1602918713.png" width="300">
 <img src="screenshots/Screenshot_1602918725.png" width="300">
 <img src="screenshots/Screenshot_1602918737.png" width="300">

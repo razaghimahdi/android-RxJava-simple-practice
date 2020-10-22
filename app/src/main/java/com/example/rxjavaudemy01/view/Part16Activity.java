@@ -19,6 +19,8 @@ import io.reactivex.rxjava3.subjects.ReplaySubject;
 
 public class Part16Activity extends AppCompatActivity {
 
+    /**NOTE: AsyncSubject emits only the last value of the Observable.*/
+
     private final static String TAG = "MyTAG Part16Activity";
 
     @Override

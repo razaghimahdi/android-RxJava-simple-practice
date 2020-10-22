@@ -211,7 +211,8 @@ public class Part23Activity extends AppCompatActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(new DisposableCompletableObserver() {
-                            /**Why DisposableCompletableObserver? because we use CompositDisposable*/
+                            /**NOTE:Why DisposableCompletableObserver? because we use CompositDisposable
+                             * DisposableCompletableObserver returns a disposable*/
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Deleted Successfully", Toast.LENGTH_SHORT).show();
@@ -251,7 +252,8 @@ public class Part23Activity extends AppCompatActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(new DisposableCompletableObserver() {
-                            /**Why DisposableCompletableObserver? because we use CompositDisposable*/
+                            /**NOTE:Why DisposableCompletableObserver? because we use CompositDisposable
+                             * DisposableCompletableObserver returns a disposable*/
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Updated Successfully", Toast.LENGTH_SHORT).show();
@@ -280,7 +282,8 @@ public class Part23Activity extends AppCompatActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(new DisposableCompletableObserver() {
-                            /**Why DisposableCompletableObserver? because we use CompositDisposable*/
+                            /**NOTE:Why DisposableCompletableObserver? because we use CompositDisposable
+                             * DisposableCompletableObserver returns a disposable*/
                             @Override
                             public void onComplete() {
                                 Toast.makeText(Part23Activity.this, "Contact Added Successfully" + rowIdOfTheItemInserted, Toast.LENGTH_SHORT).show();
