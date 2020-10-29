@@ -79,6 +79,7 @@ Publish Subject:it emits all the subsequent items of the source Observable at th
 Reply Subject:it emits all the items if the source Observable, regardless of when the subscriber subscribes.
 
 
-<img src="screenshots/Screenshot_1603352980.png" width="300">
-<img src="screenshots/Screenshot_1603352989.png" width="300">
-<img src="screenshots/Screenshot_1603352993.png" width="300">
+<img src="screenshots/Screenshot_1603982802.png" width="300">
+<img src="screenshots/Screenshot_1603982810.png" width="300">
+<img src="screenshots/Screenshot_1603982831.png" width="300">
+<img src="screenshots/Screenshot_1603982834.png" width="300">
