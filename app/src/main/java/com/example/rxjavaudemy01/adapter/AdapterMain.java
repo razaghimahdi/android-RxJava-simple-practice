@@ -38,6 +38,8 @@ import com.example.rxjavaudemy01.view.Part20Activity;
 import com.example.rxjavaudemy01.view.Part23Activity;
 import com.example.rxjavaudemy01.view.part22.Part22Activity;
 import com.example.rxjavaudemy01.view.part21.Part21Activity;
+import com.example.rxjavaudemy01.view.part24.Part24Activity;
+import com.example.rxjavaudemy01.view.part25.Part25Activity;
 
 import java.util.Collections;
 import java.util.List;
@@ -184,6 +186,14 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                     }
                     if (getPosition() == 22){
                         Intent intent = new Intent(context, Part23Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 23){
+                        Intent intent = new Intent(context, Part24Activity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 24){
+                        Intent intent = new Intent(context, Part25Activity.class);
                         context.startActivity(intent);
                     }
 

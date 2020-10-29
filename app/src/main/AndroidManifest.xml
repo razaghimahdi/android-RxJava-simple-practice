@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Part23Activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".view.part25.Part25MovieActivity"></activity>
+        <activity android:name=".view.part25.Part25Activity" />
+        <activity android:name=".view.part24.Part24Activity" />
+        <activity
+            android:name=".view.Part23Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.part22.Part22MovieActivity"
             android:theme="@style/AppTheme.NoActionBar">
