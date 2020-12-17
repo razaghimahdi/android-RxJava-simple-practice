@@ -1,22 +1,22 @@
 # android-RxJava-simple-practice
 this is a practice with all the details,which what is rxJava,what is Observable and....
 
-# developed by Mahdi Razzaghi Ghaleh
+### developed by Mahdi Razzaghi Ghaleh
 RxJava simple practice by JAVA android
 
-# What is Reactive Programming?
+#### What is Reactive Programming?
 In Reactive Programming the consumer code blocks react to the data as it comes in.
 
-# What is ReactiveX?
+#### What is ReactiveX?
 ReactiveX is a project which provides implementation for this reactive programming concept for different programming languages.
 
-# Reactive Extentions = ReactiveX
+#### Reactive Extentions = ReactiveX
 
-# What is the difference between RxJava and RxAndroid?
+#### What is the difference between RxJava and RxAndroid?
 RxAndroid is just a layer on top of RxJava which provides android specific support.
 
 
-# Observable&Observer
+#### Observable&Observer
 RxJava always has two main constructs: Observable and Observer;  
 Observables are the main thing.Observables are where we get data.  
 To observe observables we have Observers;
@@ -35,14 +35,14 @@ Between Observables and Observers there are Schedulers.To handle multithreading 
 Schedulers basically decides the thread on which a particular code runs whether on background thread
 
 
-# Operators
+#### Operators
 Operators allow you to convert the stream before its received by the
 observers and also they allow you to chain multiple operators.  
 there are over 70 different operators available.  
 We can use them to control data streams belong to observables in any
 specific way we want.
 
-# Disposable, CompositeDisposable & DisposableObserver
+#### Disposable, CompositeDisposable & DisposableObserver
 DisposableObserver: DisposableObserver is a much efficient way, it
 reduces the number of code line and it makes our works easier,especially
 if you have more than one observers in a class.
@@ -54,11 +54,11 @@ When we have more than one observers we use CompositeDisposable.
 
 we use them to avoid memory leaks.one set Observable and Observer connection is called a subscription.
 
-# What are the schedulers in RxJava?
+#### What are the schedulers in RxJava?
 with help of Schedulers we handle multithreading in RxJava.
 A schedulers can be identified as a thread pool managing one more threads.
 
-# we have different types of schedulers:
+#### we have different types of schedulers:
 Schedulers.io(): This can have a limitless thread pool.Used for non CPU
 intensive tasks.Such as database interaction, network communications and
 file system interactions.
@@ -82,17 +82,17 @@ Schedulers.from(Executor executor): This creates and returns a custom
 scheduler backed by a specific executer.
 
 
-# Should we use RxJava with Retrofit ?
+#### Should we use RxJava with Retrofit ?
 if you are working with a large amount of data which also need some modifications, or if you have to communicate with multiple REST APIs simultaneously RxJava is the best say to do it.
 
-# What are the benifits of using RxJava with Retrofit?
+#### What are the benifits of using RxJava with Retrofit?
 To get the advantage of operators  
 To avoid multithreading problems  
 To avoid memory leaks Easier error handling To write cleaner code
 
 
 
-# Subject
+#### Subject
 A Subject is a sort of bridge or proxy that is available in some
 implementations of ReactiveX that acts both as an observer and as an
 Observable.  
@@ -102,9 +102,9 @@ observes by reemitting them, and it can also emit new items.
 Subject class extending the Observable class and implementing the
 Observer interface.  
 That's why it can act like both.
-# when do we use subjects?
+#### when do we use subjects?
 Subjects have a lots of "real world" applications. When you transform your code base from imperative to reactive style. It can serve as a bridge between those two coding style.
-# Subject type
+#### Subject type
 Async Subject:it emits only the last value of the Observable.
 
 Behavior Subject:it emits most recently emitted item and all the
